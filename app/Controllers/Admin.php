@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\User;
+use App\Models\Admin as Administrator;
 
 use View;
 use Config;
@@ -21,17 +22,26 @@ use Hash;
 /**
  * Sample controller showing 2 methods and their typical usage.
  */
-class Index extends BaseController
+class Admin extends BaseController
 {
-    public $user;
+
+    protected $layout = 'Backend';
+
+    public $user, $admin;
 
     public function __construct(){
         $this->user = new User();
+        $this->user = new Administrator();
     }
    
     /**
-     * Create and return a View instance.
+     * Create Admin View instances.
      */
+    public function adminLogin(){
+        return View::make('Admin/Login')
+            ->shares('title', 'Homepage');
+    }
+
     public function index()
     {
         return View::make('Main/Index')

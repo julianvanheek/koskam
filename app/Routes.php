@@ -14,9 +14,16 @@ use Nova\Http\Request;
 
 /** Define static routes. */
 
-// The Web Routes
-Route::get('/', 'Index@Index');
-Route::get('bier', 'Index@bier');
+Route::get('/', 'Pages@Index');
+Route::get('/login', 'Pages@login');
+
+/** End define static routes */
+
+/** Admin routes **/
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/dashboard', ['before' => 'auth.admin', 'uses' => 'Admin@dashboard']);
+});
+/** End admin routes **/
 
 // The API Routes
 Route::get('api/user', array('before' => 'auth:api', function (Request $request)

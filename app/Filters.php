@@ -102,8 +102,12 @@ Route::filter('guest', function ($route, $request, $guard = null)
     return Redirect::to($uri);
 });
 
-Route::filter('auth.user', function($route, $request, $guard = null){
-    if(!Session::get('userData')){
+Route::filter('auth.admin', function($route, $request, $guard = null){
+    if(!Session::get('loggedIn')){
+        return Redirect::to('/login');
+    }
+
+    if(Session::get('loggedIn')->userLevel != 2){
         return Redirect::to('/login');
     }
 });
