@@ -28,7 +28,22 @@ class Pages extends BaseController
      */
     public function index(){
         return View::make('Main/Index')
-            ->shares('title', 'Homepage');
+            ->shares('title', 'Home');
+    }
+
+    public function producten(){
+        return View::make('Main/Producten')
+            ->shares('title', 'Producten');
+    }
+
+    public function opleidingen(){
+        return View::make('Main/Opleidingen')
+            ->shares('title', 'Opleidingen');
+    }
+
+    public function contact(){
+        return View::make('Main/Contact')
+            ->shares('title', 'Contact');
     }
 
     public function login(){
@@ -41,9 +56,8 @@ class Pages extends BaseController
             ->shares('title', 'Registreren');
     }
 
-    public function dashboard(){
-        return View::make('User/Dashboard')
-            ->shares('title', 'Dashboard');
+    public function wachtwoordVergeten(){
+        return View::make('Main/WachtwoordVergeten')
+            ->shares('title', 'Wachtwoord vergeten');
     }
-    
 }

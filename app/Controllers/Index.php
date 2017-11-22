@@ -62,9 +62,9 @@ class Index extends BaseController
         if($user->user_level < 1){
             return $this->messageHandling('error', 'Account is uitgeschakeld!');
         }
-
+        
         Session::push('userLoggedIn', $user);
-        return json_encode(array('redirect' => 'dashboard'));
+        return json_encode(array('redirect' => 'webshop'));
     }
 
     public function register(){

@@ -105,14 +105,14 @@ Route::filter('guest', function ($route, $request, $guard = null)
 Route::filter('auth.admin', function($route, $request, $guard = null){
     $session = Session::get('loggedIn');
     if(!$session){
-        return Redirect::to('/login');
+        return Redirect::to('/');
     }
 });
 
 Route::filter('auth.user', function($route, $request, $guard = null){
     $session = Session::get('userLoggedIn');
     if(!$session){
-        return Redirect::to('/login');
+        return Redirect::to('/');
     }
 });
 

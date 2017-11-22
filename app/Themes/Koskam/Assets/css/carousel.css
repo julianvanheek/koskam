@@ -12,7 +12,6 @@ body {
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
-  background-color: #e42c2a;
   position: absolute;
   top: 0;
   right: 0;

@@ -17,11 +17,12 @@ use Nova\Http\Request;
 Route::get('logout', 'Admin@logout');
 
 //pages
-Route::get('/', 'Pages@Index');
-Route::get('/login', 'Pages@login');
+Route::get('/', 'Pages@index');
+Route::get('/producten', 'Pages@producten');
+Route::get('/opleidingen', 'Pages@opleidingen');
+Route::get('/contact', 'Pages@contact');
 Route::get('/registreren', 'Pages@registreren');
-Route::get('/dashboard', ['before' => 'auth.user', 'uses' => 'Pages@dashboard']);
-
+Route::get('/wachtwoordVergeten', 'Pages@wachtwoordVergeten');
 
 // function routes
 Route::post('/submitLogin', 'Index@login');
@@ -29,9 +30,16 @@ Route::post('/submitRegister', 'Index@register');
 
 /** End define static routes */
 
+/** Webshop routes **/
+Route::group(['before' => 'auth.user'], function() {
+    Route::get('/webshop', 'Webshop@dashboard');
+
+});
+/** End webshop routes **/
+
 /** Admin routes **/
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('/dashboard', ['before' => 'auth.admin', 'uses' => 'Admin@dashboard']);
+Route::group(['prefix' => 'admin', 'before' => 'auth.admin'], function() {
+    Route::get('/dashboard', 'Admin@dashboard');
 
 });
 /** End admin routes **/
