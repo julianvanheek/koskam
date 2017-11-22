@@ -20,22 +20,24 @@ use DB;
 
 class User extends BaseModel 
 {
-    protected $table = 'users';
+    protected $table = 'Users';
 
     public function getUser($username){
-        return DB::table('users')
-            ->where('username', $username)
-            ->first();    
+        return DB::table('Users')
+            ->where('user_email', $username)
+            ->first();
+    }
+
+    public function getUserByKvK($kvk){
+    	return DB::table('Users')
+    		->where('user_kvk', $kvk)
+    		->first();
     }
 
     public function insertUser($data){
-        return DB::table('users')
-            ->insert($data);
+    	return DB::table('Users')
+    		->insert($data);
     }
 
-    public function updateUser($id, $data){
-        return DB::table('users')
-            ->where('id', $id)
-            ->update($data);
-    }
+
 }

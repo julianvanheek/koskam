@@ -10,7 +10,7 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.css" />
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/skins/skin-blue.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/skins/skin-red.css" />
 
     <link rel="shortcut icon" type="image/png" href="<?= theme_url('images/icon.png'); ?>"/>
 
@@ -24,6 +24,7 @@
 
     <?php
       Assets::css([
+        theme_url('css/style.css', 'Koskam'),
         theme_url('css/plugins/alertify/alertify.css', 'Koskam'),
         theme_url('css/plugins/alertify/alertify_theme.css', 'Koskam'),
         theme_url('css/plugins/fileinput/fileinput.css', 'Koskam'),
@@ -42,7 +43,7 @@
 
 	</head>
 	
-	<body class="hold-transition skin-blue sidebar-mini">
+	<body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
 
@@ -51,7 +52,7 @@
 
     <a href="/admin/dashboard" class="logo">
 
-      <span class="logo-mini"><b>K</b>vK</span>
+      <span class="logo-mini"><b>K</b>K</span>
 
       <span class="logo-lg"><b>Kos</b>Kam</span>
     </a>
@@ -80,41 +81,8 @@
 
       <ul class="sidebar-menu" style="margin-top: 15px;">
         <li class="header">Admin panel</li>
-        
-        <?php if($title == 'Admin Dashboard'){ 
-          echo '<li class="active">'; } else { echo '<li>';  } ?>
-
-          <a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a>
-
-        </li>
-        <?php if($title == 'Admin Log'){ 
-          echo '<li class="active">'; } else { echo '<li>';  } ?>
-
-          <a href="/admin/log"><i class="fa fa-bar-chart-o"></i> <span>Log</span></a>
-
-        </li>
-
-        <?php if($title == 'Projects'){ 
-          echo '<li class="active">'; } else { echo '<li>';  } ?>
-          <a href="/admin/projects"><i class="fa fa-folder"></i> <span>Projects</span></a>
-        </li>
-
-        <?php if($title == 'Testimonial overview'){ 
-          echo '<li class="active">'; } else { echo '<li>';  } ?>
-          <a href="/admin/testimonials"><i class="fa fa-tags"></i> <span>Testimonials</span></a>
-        </li>
-
-        <?php if($title == 'Users overview'){
-          echo '<li class="active">'; } else { echo '<li>';  } ?>
-          <a href="/admin/users"><i class="fa fa-users"></i> <span>Users</span></a>
-        </li>
-
-        <?php if($title == 'Account'){
-          echo '<li class="active">'; } else { echo '<li>'; } ?>
-          <a href="/admin/account"><i class="fa fa-user"></i> <span>Account</span></a>
-        </li>
-
-        <li><a href="/"><i class="fa fa-globe"></i> <span>Bekijk website</span></a></li>
+    
+        <li><a href="/"><i class="fa fa-globe"></i> <span>Overzicht</span></a></li>
 
       </ul>
 

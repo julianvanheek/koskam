@@ -36,6 +36,14 @@ class Pages extends BaseController
     		->shares('title', 'Login');
     }
 
+    public function registreren(){
+        return View::make('Main/Registreren')
+            ->shares('title', 'Registreren');
+    }
 
+    public function dashboard(){
+        return View::make('User/Dashboard')
+            ->shares('title', 'Dashboard');
+    }
     
 }

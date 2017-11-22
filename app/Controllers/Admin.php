@@ -24,14 +24,13 @@ use Hash;
  */
 class Admin extends BaseController
 {
-
     protected $layout = 'Backend';
 
     public $user, $admin;
 
     public function __construct(){
         $this->user = new User();
-        $this->user = new Administrator();
+        $this->admin = new Administrator();
     }
    
     /**
@@ -40,6 +39,11 @@ class Admin extends BaseController
     public function adminLogin(){
         return View::make('Admin/Login')
             ->shares('title', 'Homepage');
+    }
+
+    public function dashboard(){
+        return View::make('Main/Dashboard')
+            ->shares('title', 'Dashboard');
     }
 
     public function index()

@@ -14,14 +14,25 @@ use Nova\Http\Request;
 
 /** Define static routes. */
 
+Route::get('logout', 'Admin@logout');
+
+//pages
 Route::get('/', 'Pages@Index');
 Route::get('/login', 'Pages@login');
+Route::get('/registreren', 'Pages@registreren');
+Route::get('/dashboard', ['before' => 'auth.user', 'uses' => 'Pages@dashboard']);
+
+
+// function routes
+Route::post('/submitLogin', 'Index@login');
+Route::post('/submitRegister', 'Index@register');
 
 /** End define static routes */
 
 /** Admin routes **/
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/dashboard', ['before' => 'auth.admin', 'uses' => 'Admin@dashboard']);
+
 });
 /** End admin routes **/
 

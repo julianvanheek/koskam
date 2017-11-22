@@ -1,0 +1,1285 @@
+/*  ====================================================================
+    Koskamp rood - Standaard            #e30613     rgb(227, 6, 19)
+    Koskamp rood - Donker               #c90714     rgb(201, 7, 20)
+    Koskamp rood - Nog donkerder        #ba0713     rgb(186, 7, 19)
+    ====================================================================
+*/
+
+/* ===== Body (ingelogd) ===== */
+
+body.start #header {
+    min-height: 475px;
+}
+
+body.start .container.homeblocks {
+    /*margin-top: -125px;*/
+    margin-top: -150px;
+}
+
+/* ===== Body (niet ingelogd) ===== */
+
+body.ingelogd0 .carousel {
+    height: 500px;
+    margin-top: 0;
+    margin-bottom: -130px;
+}
+
+body.ingelogd0 .carousel-caption {
+    top: 100px;
+}
+
+body.ingelogd0 #topbar {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+body.ingelogd0 .carousel-inner > .item > img {
+    position: absolute;
+}
+
+/* ===== Homeblock ===== */
+
+.homeblock {
+    position: relative;
+    padding: 16px 24px;
+}
+
+.homeblock:hover {
+    -webkit-box-shadow: 0 0 20px #555;
+            box-shadow: 0 0 20px #555;
+}
+
+.homeblock > .homeblock-inner {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.homeblock > .homeblock-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 0 5px 20px;
+    color: #fff;
+    font-size: 20px;
+    pointer-events: none;
+    text-shadow: 0 1px 1px #000;
+}
+
+.homeblock#homeblock-producten .homeblock-inner {
+    background-image: url('../images/producten.png');
+}
+
+.homeblock#homeblock-opleidingen .homeblock-inner {
+    background-image: url('../images/opleidingen.png');
+}
+
+.homeblock#homeblock-beoordelingen .homeblock-inner {
+    background-image: url('../images/beoordelingen.png');
+}
+
+.homeblock#homeblock-beoordelingen .homeblock-inner .gemiddelden-holder {
+    color: #e30613;
+    font-size: 43px;
+    font-weight: bold;
+    height: 132px;
+    margin: 0 auto;
+    position: relative;
+    width: 212px;
+}
+
+.homeblock#homeblock-beoordelingen .homeblock-inner .gemiddelden-holder .gemiddelde-groot {
+    position: absolute;
+    right: 21px;
+    top: 8px;
+}
+
+.homeblock#homeblock-beoordelingen .homeblock-inner .gemiddelden-holder .gemiddelde-klein {
+    font-size: 23px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.homeblock.homeblock-kentekenplaten .kentekensmall .submit:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+
+    .homeblock {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 1200px) and (min-width: 1101px) {
+
+    .homeblock {
+        margin-bottom: 15px;
+    }
+
+}
+
+/* ===== Slider ===== */
+
+#slider {
+    position: relative;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin: -40px auto 0 auto;
+}
+
+#slider ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+}
+
+#slider ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #ccc;
+    text-align: center;
+    line-height: 300px;
+}
+
+/* ===== Slider (controls) ===== */
+
+.control_prev,
+.control_next {
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    display: block;
+    padding: 4% 3%;
+    width: auto;
+    height: auto;
+    background: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.control_prev:hover, 
+.control_next:hover {
+    opacity: 1;
+}
+
+.control_prev {
+    -webkit-border-radius: 0 2px 2px 0;
+       -moz-border-radius: 0 2px 2px 0;
+            border-radius: 0 2px 2px 0;
+}
+
+.control_next {
+    right: 0;
+    -webkit-border-radius: 2px 0 0 2px;
+       -moz-border-radius: 2px 0 0 2px;
+            border-radius: 2px 0 0 2px;
+}
+
+/* ===== Topbar ===== */
+
+#topbar-wrapper {
+    top: 0;
+    border-width: 0 0 1px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+
+#topbar {
+    background-image: url("../images/slider/koskam1.jpg");
+    background-size: cover;
+    height: 40px;
+    padding: 5px 0;
+}
+
+#topbar.fixed {
+    background: url(../images/koskam1.jpg);
+    background-size: cover;
+}
+
+#topbar .container .row {
+    margin: 0;
+}
+
+#topbar a {
+    color: #fff;
+}
+
+/* ===== Topbar item ===== */
+
+#topbar .topbar-item {
+    float: left;
+    color: #fff;
+    margin: 0 0 0 5px;
+}
+
+#topbar .topbar-item-text {
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+/* ===== Topbar item (route) ===== */
+
+#topbar .topbar-item-route {
+    margin: 0;
+}
+
+#topbar .topbar-item-route:hover * {
+    text-decoration: underline;
+}
+
+#topbar .topbar-item-route .volgende-route-text,
+#topbar .topbar-item-route .volgende-route-tijd {
+    padding: 5px 0 5px 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 570px) {
+
+    #topbar .topbar-item-route .volgende-route-text {
+        display: none;
+    }
+
+}
+
+@media (max-width: 450px) {
+    
+    #topbar .topbar-item-route .volgende-route-tijd {
+        display: none;
+    }
+
+}
+
+#topbar .topbar-item-route .icon-route {
+    margin: 0;
+}
+
+/* ===== Topbar item (helpdesk) ===== */
+
+#topbar .topbar-item-helpdesk {
+    margin: 0 5px 0 0;
+}
+
+/* ===== Topbar item (chat) ===== */
+
+#topbar .topbar-item-chat::before {
+    content: "|";
+    color: #fff;
+    margin: 5px 5px 5px 0;
+}
+
+#topbar .topbar-item-chat {
+    margin-right: 10px;
+}
+
+#topbar .topbar-item-chat.shake {
+    -webkit-animation: Shake 5000ms linear infinite;
+            animation: Shake 5000ms linear infinite;
+}
+
+@keyframes Shake {
+    0%  { transform: rotate(0deg);      }
+    2%  { transform: rotate(10deg);     }
+    4%  { transform: rotate(-10deg);    }
+    6%  { transform: rotate(10deg);     }
+    8%  { transform: rotate(-10deg);    }
+    10% { transform: rotate(10deg);     }
+    12% { transform: rotate(-10deg);    }
+    14% { transform: rotate(10deg);     }
+    16% { transform: rotate(-10deg);    }
+    18% { transform: rotate(0deg);      }
+}
+
+#topbar .topbar-item-chat #open-chat:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+
+    #topbar .topbar-item-chat #open-chat > span {
+        display: none;
+    }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+.navbar-wrapper {
+    box-shadow: 0 0 15px #555;
+    margin-top: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 5000;
+}
+
+
+.navbar-inverse .navbar-brand {
+    padding: 5px 0;
+    margin-right: 20px;
+}
+            
+.navbar-inverse .navbar-brand:hover {
+    background-color: #c90714;
+}
+
+.navbar-inverse > .container {
+    margin-right: -15px;
+}
+
+.navbar-inverse .navbar-toggle {
+    padding: 10px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 0;
+}
+
+.navbar-inverse .navbar-toggle.collapsed {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover .icon-bar,
+.navbar-inverse .navbar-toggle:focus .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-inverse .navbar-collapse {
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    border-right: none;
+}
+
+.navbar-inverse .navbar-collapse .nav > li:hover {
+    background-color: #c90714;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #c90714;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+    background-color: #ba0713;
+}
+
+/* ===== Collapsed Navbar ===== */
+
+.navbar-inverse .navbar-collapse.in .nav > li:hover {
+    background-color: #c90714;
+    -webkit-box-shadow: inset 5px 0 0 0 #fff;
+            box-shadow: inset 5px 0 0 0 #fff;
+}
+
+.navbar-inverse .navbar-collapse.in .nav > .active a {
+    -webkit-box-shadow: inset 5px 0 0 0 #fff;
+            box-shadow: inset 5px 0 0 0 #fff;
+}
+
+/* ===== Shopmodus Selector ===== */
+
+#shopmodusselector {
+    border: none;
+    margin: 0;
+    padding: 8px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+#shopmodusselector select.shopmodus {
+    width: 200px;
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 450px) {
+
+    #shopmodusselector select.shopmodus {
+        width: 120px;
+    }
+
+}
+
+.modal {
+    z-index: 6000;
+}
+
+/* ===== Header ===== */
+
+#header {
+    margin: 0 0 15px 0;
+    padding-top: 90px;
+    background-image: url('../images/koskamp1.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+#header #header-content h4.text-left {
+    color: #fff;
+}
+
+/* ===== Winkelwagen ===== */
+
+#winkelwagen-sidebar {
+    z-index: 3000;
+}
+
+#winkelwagen-sidebar-lipje {
+    background: #e30613;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border-color: #c90714;
+    height: 44px;
+}
+
+#winkelwagen-sidebar-lipje:hover {
+    background: #c90714;
+    border-color: #c90714;
+}
+
+.winkelwagen-sidebar-lipje-inner {
+    height: 44px;
+}
+
+.winkelwagen-sidebar-lipje-inner:active,
+.winkelwagen-sidebar-lipje-inner:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+#winkelwagen-sidebar {
+    top: 134px;
+}
+
+/* ===== Vacatures ===== */
+
+.list-group-vacatures .list-group-item-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.vacatures-melding {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+.vacature-info-developer {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== Berichtencentrum ===== */
+
+div.berichtencentrum {
+    background-color: rgba(227, 6, 19, .85);
+    height: 100px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    margin-bottom: 15px;
+}
+
+div.berichtencentrum .col-left,
+div.berichtencentrum .col-right {
+    font-size: 1.1em;
+}
+
+div.berichtencentrum a {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+div.berichtencentrum .welkom {
+    display: block;
+    font-size: 1.785715em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.berichtencentrum .winkelwagen-aantal {
+    margin-left: 5px;
+}
+
+div.berichtencentrum .btn {
+    text-shadow: none;
+}
+
+div.berichtencentrum .berichten-aantal {
+    font-size: 18px;
+}
+
+div.berichtencentrum .snelkoppelingen {
+    display: inline-block;
+}
+
+div.berichtencentrum .snelkoppelingen ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.berichtencentrum .snelkoppelingen ul li {
+    float: left;
+}
+
+div.berichtencentrum .snelkoppelingen ul li:not(:last-child)::after {
+    content: "|";
+    color: #fff;
+    margin: 25px;
+}
+
+div.berichtencentrum .berichten-aantal-button, 
+div.berichtencentrum .snelkoppelingen ul li a .btn {
+    margin-left: 5px;
+}
+
+/* ===== Switch ===== */
+
+.switch-holder .switch-input.switch-merkmodeltype,
+.switch-holder .switch-input.switch-chassisnummer {
+    display: none;
+}
+
+#header #header-content .switch-kop,
+#voertuig-zoeken {
+    color: #fff;
+}
+
+#voertuig-zoeken .switch-holder + .pull-right,
+.zoekbalkswitch-input + .pull-right {
+    margin-top: 5px;
+    color: #fff;
+}
+
+.switch-merkmodeltype {
+    padding: 15px;
+    min-height: 100px;
+    height: auto;
+}
+
+.switch-merkmodeltype select {
+    margin-bottom: 0;
+}
+
+.switch-chassisnummer {
+    padding: 15px;
+}
+
+.switch-input.switch-merkmodeltype,
+.switch-input.switch-chassisnummer {
+    background-color: rgba(255, 255, 255, .75);
+    background-image: none;
+}
+
+/* ===== Zoeken op chassisnummer ===== */
+
+.zoekenopchassisnummer-holder {
+    position: relative;
+    margin: 15px 0;
+    height: 40px;
+}
+
+.zoekenopchassisnummer-holder #zoekopchassisnummer {
+    outline: none;
+    position: absolute;
+    height: 40px;
+}
+
+.zoekenopchassisnummer-holder .zoekopchassisnummer-button {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    text-align: center;
+    height: 100%;
+    outline: none;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    background-color: #555;
+    -webkit-border-radius: 0 4px 4px 0;
+       -moz-border-radius: 0 4px 4px 0;
+            border-radius: 0 4px 4px 0;
+}
+
+.zoekenopchassisnummer-holder .chassisnummerhistorie-button {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    text-align: center;
+    height: 100%;
+    outline: none;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    background-color: #555;
+    -webkit-border-radius: 0 4px 4px 0;
+       -moz-border-radius: 0 4px 4px 0;
+            border-radius: 0 4px 4px 0;
+}
+
+.chassisnummerhistorie-button.chassisnummerhistorietrigger {
+    right: 50px;
+    z-index: 999;
+}
+
+/* ===== Overige ===== */
+
+.first-row {
+    margin-top: 20px;
+}
+
+.second-row {
+    margin-bottom: 15px;
+}
+
+body.start .second-row {
+    margin-bottom: 150px;
+}
+
+.modal {
+    z-index: 8000;
+}
+
+#voertuig-zoeken {
+    margin-bottom: 40px;
+}
+
+#search,
+#button-search ,
+.zoekbalkswitch-groepen-select {
+    font-size: 18px;
+    height: 40px;
+}
+
+#button-search:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.loginFormSmall input#memory {
+    position: relative;
+    top: 2px;
+}
+
+.loginFormSmall input#memory + label {
+    cursor: pointer;
+}
+
+.loginFormSmall input#submitlogin {
+    outline: none;
+}
+
+.loginFormSmall input#submitlogin:active,
+.loginFormSmall input#submitlogin:focus {
+    background: #363636;
+    border-color: #363636;
+}
+
+.bestbuy,
+.opisop,
+.smartpricing,
+.top1000 {
+    width: 100px;
+    height: 62px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.bestbuy {
+    background-image: url('../images/modules/koswebshop/bestbuy.svg');
+}
+
+.opisop {
+    background-image: url('../images/modules/koswebshop/opisop.svg');
+    z-index: 116;
+}
+
+.smartpricing {
+    background-image: url('../images/modules/koswebshop/smartpricing.svg');
+}
+
+.top1000 {
+    background-image: url('../images/modules/koswebshop/top1000.svg');
+}
+
+/* ======================================================================================================== */
+
+#frmSearchAlgemeen {
+    margin: 0 15px;
+}
+
+#frmSearchAlgemeen #zoekbalk-switch-buttons {
+    margin-top: 10px;
+    color: #fff;
+}
+
+#frmSearchAlgemeen .zoekbalkswitch-groepen-select {
+    cursor: pointer;
+    -webkit-border-radius: 4px 0 0 4px;
+       -moz-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+}
+
+.input-group-addon.nopad,
+#frmSearchAlgemeen .input-group-addon {
+    padding: 0;
+}
+
+.input-group-addon.nopad > button,
+#frmSearchAlgemeen .input-group-addon > button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 0;
+}
+
+.input-group-addon.nopad .btn {
+    border: 0;
+    //background: transparent;
+}
+
+#frmSearchAlgemeen .input-group-addon > button > .fa {
+    font-size: 1.2em;
+}
+
+#frmSearchAlgemeen .input-group-addon > button:hover {
+    background-color: #e8e8e8;
+}
+
+/* ======================================================================================================== */
+
+/*.top1000 {
+    width: 180px;
+    height: 50px;
+    background-color: transparent;
+    background-image: url('../images/modules/koswebshop/top1000.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: contain;
+            background-size: contain;
+}*/
+
+/* ======================================================================================================== */
+
+#chat-block-left,
+#chat-block-right {
+    background-color: #e30613;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px #555
+}
+
+#chat-block-holder:hover * {
+    background-color: #c90714;
+}
+
+span.scrolltotop {
+    background-color: #555;
+    cursor: pointer;
+    display: none;
+    margin: 0;
+    padding: 10px;
+    position: fixed;
+    right: 20px;
+    bottom: 16px;
+}
+
+span.scrolltotop:hover {
+    background-color: #464646;
+}
+
+a.news-link > span {
+    display: inline-block;
+}
+
+a.news-link > span:first-letter {
+    text-transform: uppercase;
+}
+
+/* ======================================================================================================== */
+/* TIJDELIJK KEVIN ARTIKELREGELS */
+
+.artikelregel.div_sort:nth-child(odd) {
+    background-color: #f9f8f8;
+}
+
+.artikelregel.div_sort:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+.alleresultaten .artikelregel {
+    min-height: 180px;
+}
+
+/* -------------- */
+
+.artikelregel .webshopafbeelding {
+    height: 188px;
+}
+
+.artikelregel .webshopafbeelding .showmeerinfo {
+    position: absolute;
+    bottom: 0;
+}
+
+/* -------------- */
+    
+.artikelregel .webshopafbeelding .webshopafbeelding-inner {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.artikelregel .webshopafbeelding .webshopafbeelding-inner .webshopafbeelding-placeholder {
+    background: #fff;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 112px;
+    height: 112px;
+    width: 100%;
+    max-width: 112px;
+    cursor: progress;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+
+.artikelregel .webshopafbeelding .webshopafbeelding-inner .webshopafbeeldingholder {
+    display: table-cell;
+    vertical-align: middle;
+    height: 120px; /* 112px */ 
+    max-height: 120px;
+    width: 100%;
+    padding: 5px;
+    background-color: #fff;
+    cursor: -moz-zoom-in; 
+    cursor: -webkit-zoom-in; 
+    cursor: zoom-in;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+
+.artikelregel .webshopafbeelding .webshopafbeelding-inner .webshopafbeeldingholder > img.img-responsive {
+    max-width: 100%;
+    max-height: 120px;
+    margin: 0 auto;
+}
+
+.artikelregel .webshopafbeelding .showmeerinfo:hover {
+    /*background-color: #014c6f;*/
+    background-color: #0083C0;
+}
+
+.artikelregel .levertijden {
+    text-transform: none;
+}
+
+.artikelregel .mg_opmerkingen .mg_opmerkingen_span {
+    text-transform: lowercase;
+}
+
+.artikelregel .artikelomschrijving {
+    text-transform: uppercase;
+}
+
+.artikelregel .prijs_placeholder {
+    height: 70px;
+    line-height: 40px;
+    cursor: progress;
+}
+
+.artikelregel p.voorraad,
+.artikelregel p.bruto,
+.artikelregel p.netto,
+.artikelregel p.merk {
+    display: none;
+}
+
+.artikelregel img.autoniveau_logo {
+    border: 1px solid #3c5799;
+}
+
+.artikelregel .showBandAlert {
+    padding: 2px 6px;
+    background-color: #eea236;
+    border-color: #eea236;
+    cursor: help;
+}
+
+.artikelregel .showBandAlert:hover {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.artikelregel .showBandAlert > span,
+.artikelregel .showBandAlert > i {
+    margin-right: 4px;
+}
+
+.artikelregel .artikellevertijd {
+    cursor: help;
+}
+
+.artikelregel div[id^="afhaal"] > .tooltip {
+    width: 110px;
+}
+
+.artikelregel div[id^="afhaal"] > .tooltip.top .tooltip-inner {
+    margin-bottom: 0;
+}
+
+.artikelregel div[id^="alert"] > .tooltip {
+    width: 150px;
+}
+
+#frmSearchAlgemeen #search.force-refresh {
+    -webkit-box-shadow: 0 0 7px #fff;
+            box-shadow: 0 0 7px #fff;
+}
+
+.tpms_melding {
+    background-color: #d9edf7;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+/*================================================================= */
+
+.vehicle-details {
+    position: absolute;
+    background-color: #FFF;
+    color: #555;
+    z-index: 999;
+    -webkit-box-shadow: 0 0 10px #555;
+    -moz-box-shadow: 0 0 10px #555;
+    box-shadow: 0 0 10px #555;
+}
+
+.vehicle-details .col-md-6 {
+    padding: 0;
+    border-right: 1px solid #ddd;
+}
+
+.vehicle-details table {
+    margin: 0;
+    background: #FFF;
+}
+
+.vehicle-details table thead {
+    background: #F5F5F5;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+.vehicle-details table thead td {
+    font-weight: bold;
+}
+
+.vehicle-details table td {
+    padding: 8px;
+    vertical-align: top;
+}
+
+.vehicle-details table tbody td:first-child {
+    font-weight: bold;
+    width: 200px;
+}
+
+.vehicle-details table tbody tr:nth-child(odd) {
+    background: #F9F9F9;
+}
+
+@media (max-width: 768px) {
+
+    .vehicle-details table tbody td:first-child {
+        width: auto;
+    }
+
+}
+
+/*================================================================= */
+
+.vehicle-info-container {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    color: #FFF;
+    display: table;
+    table-layout: fixed;
+}
+
+.vehicle-info-container > .tbl-row {
+    display: table-row;
+    background-color: #E30613;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-brand {
+    background: #F5F6F7 url('/modules/kosFunctions/templates/angle.png') no-repeat right;
+    min-width: 65px;
+    width: 65px;
+    padding: 0;
+    pointer-events: none;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-brand > img {
+    margin: 0 5px;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-toggle {
+    min-width: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-toggle > .vehicle-trigger {
+    width: 20px;
+    height: 20px;
+    background: #FFF;
+    color: #E30613;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-toggle > .vehicle-trigger.active {
+    background: #F73944;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-apk {
+    width: 70px;
+    text-align: center;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-apk > .vehicle-apk-alert {
+    background: #F5E100;
+    padding: 3px;
+    display: inline-block;
+    width: 60px;
+    color: #555;
+    cursor: default;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-apk > .vehicle-apk-alert.vehicle-apk-expired .fa {
+    -webkit-animation: apk-alert-blink 1s infinite;
+    -moz-animation: apk-alert-blink 1s infinite;
+    -o-animation: apk-alert-blink 1s infinite;
+    animation: apk-alert-blink 1s infinite;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-model {
+    font-size: 1.5em;
+}
+
+.vehicle-info-container > .tbl-row > .tbl-cell.vehicle-info {
+    min-width: 330px;
+    width: 330px;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+
+    .vehicle-info-container > .tbl-row > .tbl-cell.vehicle-model {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+}
+
+@-webkit-keyframes apk-alert-blink {
+    0%, 49% { color: #555; }
+    50%, 100% { color: #E30613; }
+}
+
+@-moz-keyframes apk-alert-blink {
+    0%, 49% { color: #555; }
+    50%, 100% { color: #E30613; }
+}
+
+@-o-keyframes apk-alert-blink {
+    0%, 49% { color: #555; }
+    50%, 100% { color: #E30613; }
+}
+
+@keyframes apk-alert-blink {
+    0%, 49% { color: #555; }
+    50%, 100% { color: #E30613; }
+}
+
+.vehicle-info-container .popover {
+    color: #555;
+}
+
+/* ======================================================================================================== */
+
+.breadcrumb-wrapper {
+    background: #F5F5F5;
+    position: relative;
+    width: 100%;
+    height: 36px;
+    margin-bottom: 15px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.breadcrumb-wrapper .breadcrumb {
+    float: left;
+    margin: 0;
+}
+
+.breadcrumb-wrapper .extra-space {
+    float: right;
+}
+
+.breadcrumb-wrapper .extra-space .search-in-vehicle {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.breadcrumb-wrapper .extra-space .search-in-vehicle input.ac_input {
+    padding: 6px 12px;
+    height: 100%;
+    margin-top: 3px;
+    margin-right: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.breadcrumb-wrapper .extra-space .btn-autotools {
+    background: #FFF url('/template/style/images/kosdoc/autotools.png') no-repeat left;
+    text-indent: 25px;
+    display: inline-block;
+    padding: 0;
+    height: 100%;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.breadcrumb-wrapper .extra-space .btn-autotools:hover {
+    background-color: #F9F8F8;
+    border-color: #ADADAD;
+}
+
+.breadcrumb-wrapper .extra-space .btn-autotools > a {
+    display: block;
+    padding: 4px 12px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .breadcrumb-wrapper > .breadcrumb {
+        width: 100%;
+    }
+
+    .breadcrumb-wrapper .extra-space {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+
+/* ======================================================================================================== */
+
+/*  
+    Zorg ervoor dat deze (hoofd-)elementen een minimale breedte hebben om te voorkomen dat de inhoud hiervan 
+    gaat schalen. Is het scherm minder breed dan de 360 pixels, dan wordt de inhoud dus niet meer geschaald.
+*/
+body,
+.navbar-wrapper .navbar {
+    min-width: 360px;
+    width: auto !important;
+    width: 360px;
+}
+
+/*
+    Dit zijn alle elementen met een effect. Al deze elementen zijn bij elkaar gezet om zo alle effecten in
+    één keer uit te kunnen schakelen. Ook is het zo duidelijk welke elementen een effect hebben.
+*/
+[class*="col-"],
+.navbar-brand,
+.navbar-inverse .navbar-toggle,
+.navbar-inverse .navbar-collapse .nav > li,
+.homeblock,
+.control_prev:hover,
+.control_next:hover,
+.breadcrumb-wrapper .extra-space {
+    -webkit-transition: all 0.2s ease-in-out;
+       -moz-transition: all 0.2s ease-in-out;
+         -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+
+/*
+    Dit zijn alle elementen met afgeronde hoeken (van 4px). Al deze elementen zijn bij elkaar gezet 
+    om zo alle afgeronde hoeken in één keer te kunnen verwijderen. Ook is het zo duidelijk welke 
+    elementen afgeronde hoeken (van 4px) hebben.
+*/
+div.berichtencentrum,
+.vacatures-melding,
+.vacature-info-developer {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}

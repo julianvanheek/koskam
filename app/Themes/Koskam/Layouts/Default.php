@@ -20,6 +20,7 @@
             Assets::css([
                 theme_url('css/style.css', 'Koskam'),
                 theme_url('css/responsive.css', 'Koskam'),
+                theme_url('css/carousel.css', 'Koskam'),
                 theme_url('css/plugins/alertify/alertify.css', 'Koskam'),
                 theme_url('css/plugins/alertify/alertify_theme.css', 'Koskam'),
             ]);
@@ -43,6 +44,8 @@
             theme_url('js/main.js', 'Koskam'),
             theme_url('js/user/user_main.js', 'Koskam'),
             theme_url('js/user/user_functions.js', 'Koskam'),
+            theme_url('js/admin/admin_main.js', 'Koskam'),
+            theme_url('js/admin/admin_functions.js', 'Koskam'),
         ]);
     ?>
 
