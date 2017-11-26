@@ -28,7 +28,13 @@ class User extends BaseModel
             ->first();
     }
 
-    public function getUserByKvK($kvk){
+    public function getCompany($name){
+        return DB::table('Users')
+            ->where('user_company_name', $name)
+            ->first();
+    }
+
+    public function getCompanyByKvK($kvk){
     	return DB::table('Users')
     		->where('user_kvk', $kvk)
     		->first();

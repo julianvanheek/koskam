@@ -33,7 +33,10 @@ Route::post('/submitRegister', 'Index@register');
 /** Webshop routes **/
 Route::group(['before' => 'auth.user'], function() {
     Route::get('/webshop', 'Webshop@dashboard');
+});
 
+Route::group(['prefix' => 'webshop', 'before' => 'auth.user'], function() {
+    Route::get('/account', 'Webshop@account');
 });
 /** End webshop routes **/
 

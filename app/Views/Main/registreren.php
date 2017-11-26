@@ -12,7 +12,7 @@
 
         <p class="handwriting">Koskam verkoopt uitsluitend aan bedrijven en <span class="rood">niet</span> aan particulieren.</p>
 
-        <form action="" method="post">
+        <form id="registerForm" method="post">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
@@ -27,9 +27,7 @@
                                     <tr>
                                         <td>
                                             Bedrijfsnaam:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="bedrijfsnaam" class="form-control" type="text" name="bedrijfsnaam" value="">
@@ -38,9 +36,7 @@
                                     <tr>
                                         <td>
                                             Naam eigenaar:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="naameigenaar" class="form-control" type="text" name="naameigenaar" value="">
@@ -49,9 +45,7 @@
                                     <tr>
                                         <td>
                                             Afleveradres:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="afleveradres" class="form-control" type="text" name="afleveradres" value="">
@@ -60,9 +54,7 @@
                                     <tr>
                                         <td>
                                             Postcode:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="postcode" class="form-control" type="text" name="postcode" value="">
@@ -71,9 +63,7 @@
                                     <tr>
                                         <td>
                                             Woonplaats:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="woonplaats" class="form-control" type="text" name="woonplaats" value="">
@@ -82,9 +72,7 @@
                                     <tr>
                                         <td>
                                             Telefoon vast:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="telefoonvast" class="form-control" type="text" name="telefoonvast" value="">
@@ -94,9 +82,7 @@
                                     <tr>
                                         <td>
                                             E-mail adres:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
                                             <input id="emailadres" class="form-control" type="text" name="emailadres" value="">
@@ -106,10 +92,7 @@
                                         <td>
                                         </td>
                                         <td>
-                                            (
-                                            <span class="verplicht">
-                                    *
-                                </span> = verplicht)
+                                            (<span class="verplicht">*</span> = verplicht)
                                         </td>
                                     </tr>
                                 </tbody>
@@ -128,57 +111,29 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td class="form-links postadresafwijkend">
-                                            Postadres (indien afwijkend):
-                                        </td>
-                                        <td>
-                                            <input id="postadresafwijkend" class="form-control" type="text" name="postadresafwijkend" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="postcodeafwijkend">
-                                            Postcode:
-                                        </td>
-                                        <td>
-                                            <input id="postcodeafwijkend" class="form-control" type="text" name="postcodeafwijkend" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="woonplaatsafwijkend">
-                                            Woonplaats:
-                                        </td>
-                                        <td>
-                                            <input id="woonplaatsafwijkend" class="form-control" type="text" name="woonplaatsafwijkend" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td class="telefoonafwijkend">
                                             Telefoon mobiel:
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
-                                            <input id="telefoonafwijkend" class="form-control" type="text" name="telefoonafwijkend" value="">
+                                            <input id="telefoonafwijkend" class="form-control" type="text" name="telefoonmobiel" value="">
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td class="kvknummer">
                                             KvK nummer:
-                                            <span class="verplicht">
-                                    *
-                                </span>
+                                            <span class="verplicht">*</span>
                                         </td>
                                         <td>
-                                            <input id="kvknummer" class="form-control" type="text" name="kvknummer" value="">
+                                            <input id="kvknummer" class="form-control" type="text" name="kvk" value="">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                         </td>
                                         <td>
-                                            (
-                                            <span class="verplicht">
-                                    *
-                                </span> = verplicht)
+                                            (<span class="verplicht">*</span> = verplicht)
                                         </td>
                                     </tr>
                                 </tbody>
@@ -188,7 +143,7 @@
                 </div>
             </div>
             <div class="debiteurformulier-verzendknop">
-                <input class="btn btn-primary" type="submit" name="submit" value="Verzenden">
+                <input class="submit btn btn-primary" type="submit" value="Registreren">
             </div>
         </form>
         <p></p>

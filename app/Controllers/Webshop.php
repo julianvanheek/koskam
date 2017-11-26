@@ -33,8 +33,13 @@ class Webshop extends BaseController
     }
 
     public function dashboard(){
-        return View::make('User/Dashboard')
-            ->shares('title', 'Dashboard');
+        return View::make('Webshop/Dashboard')
+            ->shares('title', 'Start');
+    }
+
+    public function account(){
+        return View::make('Webshop/Account')
+            ->shares('title', 'Account');
     }
 
     public function logout(){

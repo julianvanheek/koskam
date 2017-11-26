@@ -1,0 +1,227 @@
+.kenteken-veld-holder {
+    position: relative;
+    height: 100px;
+    /*z-index: 4001;*/
+    -webkit-transition: all 0.2s ease-in-out;
+       -moz-transition: all 0.2s ease-in-out;
+         -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+
+.kenteken-veld-holder.kenteken-error {
+    -webkit-box-shadow: 0 0 15px #F00;
+       -moz-box-shadow: 0 0 15px #F00;
+            box-shadow: 0 0 15px #F00;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+
+.kenteken-veld-holder.kenteken-error .kenteken-veld {
+    border: 1px solid #F00;
+}
+
+.kenteken-veld-holder.kenteken-error .kenteken-veld-button {
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    border-color: #F00;
+}
+
+.kenteken-veld-holder.kenteken-error .kenteken-veld-button:disabled {
+    cursor: not-allowed;
+}
+
+.kenteken-veld-holder.kenteken-error .kenteken-veld-button:disabled:hover {
+    background-color: #555;
+}
+
+/* ===== Kentekenveld ===== */
+
+.kenteken-veld {
+    width: 100%;
+    height: 100%;
+    background: #F5C003 url("../images/webshop/kentekenzoeker-links.gif") no-repeat left center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%;
+    border: 1px solid #CCC;
+    font-size: 65px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
+    text-align: center;
+    outline: none;
+    position: absolute;
+    left: 0;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+
+.kenteken-veld::selection {
+    background: #999;
+    color: #fff;
+}
+
+.kentekenzoeker::-moz-selection {
+    background: #999;
+    color: #fff;
+}
+
+.kenteken-veld:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 10px #555;
+       -moz-box-shadow: 0 0 10px #555;
+            box-shadow: 0 0 10px #555;
+}
+
+.kenteken-veld::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* ===== Kentekenveld Button ===== */
+
+.kenteken-veld-button {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    text-align: center;
+    height: 100%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #555;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    border-color: #CCC;
+    color: #FFF;
+    font-size: 30px;
+}
+
+.kenteken-veld-button:hover {
+    background-color: #666;
+}
+
+/* ===== Kentekenhistorie Pijl ===== */
+
+.kentekenhistorie-pijl {
+    line-height: 1;
+    position: absolute;
+    right: 54px;
+    top: 4px;
+    border: none;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    /*z-index: 99999;*/
+    z-index: 998;
+    -webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+}
+
+.kentekenhistorie-pijl.rotate-180 {
+    z-index: 5000;
+}
+
+.kentekenhistorie-trigger {
+    /*top: -1px;*/
+    /*left: 1px;*/
+    -webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+}
+
+.kentekenhistorie-trigger.rotate-180 {
+    /*top: -2px;*/
+    /*left: -1px;*/
+}
+
+/* ===== Kentekenhistorie Container ===== */
+
+.chassisnummerhistorie-container,
+.kentekenhistorie-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 101px;
+    background-color: #fff;
+    padding: 0;
+    display: none;
+    width: 100%;
+    /*z-index: 5000;*/
+    z-index: 90000;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.chassisnummerhistorie-container .chassisnummerhistorie-item,
+.kentekenhistorie-container .kentekenhistorie-item {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px dotted #ccc;
+    cursor: pointer;
+    background-color: #fff;
+    color: #555;
+    text-shadow: none;
+    /*z-index: 5000;*/
+    z-index: 90000;
+}
+
+.kentekenhistorie-container .kentekenhistorie-item strong {
+    display: inline-block;
+    width: 70px;
+}
+
+.chassisnummerhistorie-container .chassisnummerhistorie-item:hover,
+.kentekenhistorie-container .kentekenhistorie-item:hover {
+    background-color: #f5f6f7;
+}
+
+.chassisnummerhistorie-container .chassisnummerhistorie-item:last-child,
+.kentekenhistorie-container .kentekenhistorie-item:last-child {
+    border-bottom: none;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+
+/* ===== Kentekenhistorie Overlay ===== */
+
+.kentekenhistorie-overlay {
+    display: none;
+    position: fixed;
+    /*position: absolute;*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .15);
+    z-index: 80000;
+    /*pointer-events: none;*/
+}
+
+.kentekenhistorie-overlay.show {
+    display: block;
+}
+
+@media (max-width: 992px) {
+
+    .kenteken-veld {
+        font-size: 45px;
+    }
+
+    .kenteken-veld-button {
+        width: 40px;
+        font-size: 25px;
+    }
+    
+    .kentekenhistorie-pijl {
+        right: 43px;
+    }
+
+}

@@ -68,26 +68,35 @@ class Index extends BaseController
     }
 
     public function register(){
-        if(!isset($_POST['email'], $_POST['password'], $_POST['password2'], $_POST['kvk'], $_POST['naam'])){
+        if(!isset($_POST['bedrijfsnaam'], $_POST['naameigenaar'], $_POST['afleveradres'], $_POST['postcode'], $_POST['woonplaats'], $_POST['telefoonvast'], $_POST['emailadres'], $_POST['telefoonmobiel'], $_POST['kvk'])){
             return $this->messageHandling('error', 'Er is een probleem opgetreden!');
         }
 
-        if(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']) || 
-            empty($_POST['kvk']) || empty($_POST['naam'])){
+        if(empty($_POST['bedrijfsnaam']) || empty($_POST['naameigenaar']) || empty($_POST['afleveradres']) || 
+            empty($_POST['postcode']) || empty($_POST['woonplaats']) || empty($_POST['telefoonvast']) ||
+            empty($_POST['emailadres']) || empty($_POST['telefoonmobiel']) || empty($_POST['kvk'])){
             return $this->messageHandling('error', 'Vul alle gegevens in!');
         }
 
-        $username = htmlentities($_POST['email']);
-        $password = htmlentities($_POST['password']);
-        $password2 = htmlentities($_POST['password2']);
+        $bedrijfsnaam = htmlentities($_POST['bedrijfsnaam']);
+        $naameigenaar = htmlentities($_POST['naameigenaar']);
+        $afleveradres = htmlentities($_POST['afleveradres']);
+        $postcode = htmlentities($_POST['postcode']);
+        $woonplaats = htmlentities($_POST['woonplaats']);
+        $telefoonvast = htmlentities($_POST['telefoonvast']);
+        $emailadres = htmlentities($_POST['emailadres']);
+        $telefoonmobiel = htmlentities($_POST['telefoonmobiel']);
         $kvk = htmlentities($_POST['kvk']);
-        $naam = htmlentities($_POST['naam']);
 
-        $user = $this->user->getUser($username);
-        $kvkCheck = $this->user->getUserByKvK($kvk);
+        $bedrijfsnaamCheck = $this->user->getCompany($bedrijfsnaam);
+        $userCheck = $this->user->getUser($emailadres);
+        $kvkCheck = $this->user->getCompanyByKvK($kvk);
 
-        if($user){
-            return $this->messageHandling('error', 'Email staat al ingeschreven!');
+        if($bedrijfsnaamCheck){
+            return $this->messageHandling('error', 'Bedrijf staat al ingeschreven!');
+        }
+        if($userCheck){
+            return $this->messageHandling('error', 'Emailadres word al gebruikt!');
         }
         if($kvkCheck){
             return $this->messageHandling('error', 'KvK staat al ingeschreven!');
@@ -95,19 +104,10 @@ class Index extends BaseController
         if(strlen($kvk) != 8){
             return $this->messageHandling('error', 'KvK niet juist!');
         }        
-        if($password != $password2){
-            return $this->messageHandling('error', 'Wachtwoorden komen niet overeen!');
-        }   
-        if(strlen($password) < 6){
-            return $this->messageHandling('error', 'Wachtwoord te kort!');
-        }
-        $password = Hash::make($password);
-
-        $data = array('user_email' => $username, 'user_password' => $password, 'user_kvk' => $kvk, 'user_name' => $naam);
 
         $this->user->insertUser($data);
 
-        return json_encode(array('redirect' => 'login'));
+        return json_encode(array('redirect' => 'geregistreerd'));
     }
 
     public function logout(){
