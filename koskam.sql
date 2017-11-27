@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 nov 2017 om 15:50
--- Serverversie: 10.1.26-MariaDB
--- PHP-versie: 7.1.9
+-- Gegenereerd op: 27 nov 2017 om 12:07
+-- Serverversie: 10.1.21-MariaDB
+-- PHP-versie: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -47,8 +45,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_kvk`, `user_email`, `user_password`, `user_company_name`, `user_owner_name`, `user_phone`, `user_zipcode`, `user_city`, `user_delivery_adress`, `user_level`) VALUES
-(1, 0, 'info@koskam.nl', '$2y$10$hB0NyU8sUfa9514dS5mFv.IjLgJSiQ5PnqUXRJhHWSz9yLNU1ZSES', 'koskam', '', NULL, '', NULL, NULL, '3'),
-(3, 12345678, 'admin@admin.org', '$2y$10$CfAvqkEw.MXRJgHK5aGaUOMWpH7t8zHsBhYVDE..GXItjGt5jMKg2', 'admin', '', NULL, '', NULL, NULL, '2');
+(1, 0, 'info@koskam.nl', '$2y$10$hB0NyU8sUfa9514dS5mFv.IjLgJSiQ5PnqUXRJhHWSz9yLNU1ZSES', 'koskam', 'Julian', NULL, '', NULL, NULL, '3'),
+(3, 12345678, 'admin@admin.org', '$2y$10$CfAvqkEw.MXRJgHK5aGaUOMWpH7t8zHsBhYVDE..GXItjGt5jMKg2', 'Broekhuis Rijssen', 'Admin', NULL, '', NULL, NULL, '2');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -69,8 +67,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
