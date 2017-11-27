@@ -33,35 +33,31 @@ class Index extends BaseController
      * Create and return a View instance.
      */
     public function login(){
-        if(!isset($_POST['email']) || !isset($_POST['password'])){
+        if(!isset($_POST['email']) || !isset($_POST['password']))
             return $this->messageHandling('error', 'Er is een probleem opgetreden!');
-        }
-
-        if(empty($_POST['email']) || empty('password')){
+        
+        if(empty($_POST['email']) || empty('password'))
             return $this->messageHandling('error', 'Vul alle gegevens in!');
-        }
-
+        
         $username = htmlentities($_POST['email']);
         $password = htmlentities($_POST['password']);
 
         $user = $this->user->getUser($username);
 
-        if(!$user){
+        if(!$user)
             return $this->messageHandling('error', 'Gebruiker niet gevonden!');
-        }
-
-        if(!Hash::check($password, $user->user_password)){
+        
+        if(!Hash::check($password, $user->user_password))
             return $this->messageHandling('error', 'Incorrecte gegevens!');
-        }
-
+        
         if($user->user_level == 3){
             Session::push('loggedIn', $user);
             return json_encode(array('redirect' => 'admin/dashboard'));
         }
 
-        if($user->user_level < 1){
+        if($user->user_level < 1)
             return $this->messageHandling('error', 'Account is uitgeschakeld!');
-        }
+        
         
         Session::push('userLoggedIn', $user);
         return json_encode(array('redirect' => 'webshop'));

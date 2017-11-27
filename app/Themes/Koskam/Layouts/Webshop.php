@@ -36,11 +36,11 @@
 
     <div id="winkelwagen-sidebar" style="opacity: 1; position: fixed; right: 0px; display: none;">
         <div id="winkelwagen-sidebar-content">
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
                 $(".aantal-artikelen").html("0 artikelen");
                 $(".winkelwagen-aantal").text("0");
                 $("#winkelwagen-sidebar").fadeOut();
-            </script>
+            </script> -->
         </div>
     </div>
 
@@ -83,7 +83,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="/webshop">
-                            <img src="<?= theme_url('images/logo.svg'); ?>" alt="Koskamp B.V." title="Koskamp B.V." width="135" height="40">
+                            <img src="<?= theme_url('images/logo.svg'); ?>" alt="Koskamp B.V." title="Koskam B.V." width="135" height="40">
                         </a>
 
                     </div>
@@ -92,8 +92,8 @@
                             <li <?php if($title == 'Start'){echo 'class="active" ';} ?>>
                                 <a href="/webshop" <?php if($title == 'Start'){echo 'class="active" ';} ?> title="Start"><span>Start</span></a>
                             </li>
-                            <li <?php if($title == 'Mijn Account'){echo 'class="active" ';} ?>>
-                                <a href="/webshop/account" <?php if($title == 'Mijn Account'){echo 'class="active" ';} ?> title="Mijn Account"><span>Mijn Account</span></a>
+                            <li <?php if($title == 'Account'){echo 'class="active" ';} ?>>
+                                <a href="/webshop/account" <?php if($title == 'Account'){echo 'class="active" ';} ?> title="Mijn Account"><span>Mijn Account</span></a>
                             </li>
                             <li <?php if($title == 'Contact'){echo 'class="active" ';} ?>>
                                 <a href="/webshop/contact" <?php if($title == 'Contact'){echo 'class="active" ';} ?>  title="Contact"><span>Contact</span></a>
@@ -472,6 +472,10 @@
 
 <!-- =========================== SCRIPTS ===================================== -->
 
+<!-- Scripts !-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <?php
     Assets::js([
         theme_url('js/plugins/alertify/alertify.js', 'Koskam'),
@@ -480,12 +484,29 @@
         theme_url('js/main.js', 'Koskam'),
         theme_url('js/user/user_main.js', 'Koskam'),
         theme_url('js/user/user_functions.js', 'Koskam'),
-        theme_url('js/admin/admin_main.js', 'Koskam'),
-        theme_url('js/admin/admin_functions.js', 'Koskam'),
+        //theme_url('js/admin/admin_main.js', 'Koskam'),
+        //theme_url('js/admin/admin_functions.js', 'Koskam'),
 
         // plugins
-        theme_url('js/plugins/webshop/routetimer.js', 'Koskam'),
+        //theme_url('js/plugins/webshop/routetimer.js', 'Koskam'),
     ]);
+
+    switch ($title) {
+        case 'Start':
+            echo '<script>addClassToBody("start"); </script>'; 
+            break;
+        
+        case 'Account':
+            echo '<script>addClassToBody("mijn-account");</script>'
+                . '<script>loadAccDetails();</script>'; 
+            break;
+
+        default:
+            echo '<script>addClassToBody("start"); </script>'; 
+            break;
+    }
 ?>
+
+
 
 </html>

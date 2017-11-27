@@ -4,11 +4,11 @@
         <div class="list-group">
             <div class="list-group-item list-group-item-action">
                 <p>
-                    Debiteurnummer: 0115921
-                    <br> Broekhuis Rijssen
-                    <br> Kalanderstraat 9
-                    <br> 7461JL Rijssen
-                    <br> 0548-542293
+                    <span class="debiteurNummer">Laden..</span>
+                    <br> <span class="bedrijf"></span>
+                    <br> <span class="straat"></span>
+                    <br> <span class="postcode"></span>
+                    <br> <span class="telefoon"></span>
                 </p>
             </div>
         </div>

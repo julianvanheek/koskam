@@ -33,10 +33,13 @@ Route::post('/submitRegister', 'Index@register');
 /** Webshop routes **/
 Route::group(['before' => 'auth.user'], function() {
     Route::get('/webshop', 'Webshop@dashboard');
+    Route::post('/loadAccountDetails', 'Webshop@loadAccountDetails');
+    // Route::post('/loadAccountMessages', 'Webshop@loadAccountMessages');
 });
 
 Route::group(['prefix' => 'webshop', 'before' => 'auth.user'], function() {
     Route::get('/account', 'Webshop@account');
+    Route::get('/berichtencentrum', 'Webshop@berichtenCentrum');
 });
 /** End webshop routes **/
 
