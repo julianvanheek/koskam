@@ -42,7 +42,7 @@ class Admin extends BaseController
     }
 
     public function dashboard(){
-        return View::make('Main/Dashboard')
+        return View::make('Admin/Dashboard')
             ->shares('title', 'Dashboard');
     }
 

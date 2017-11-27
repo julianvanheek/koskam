@@ -4,10 +4,10 @@ $('document').ready(function(){
 	}
 
 	// Login
-    $('#login-form').on('click', '.login-button', function(e){
+    $('#loginSmall').on('click', '.submitLogin', function(e){
       e.preventDefault();
       var data = $(this.form).serialize();
-      sendRequest({url: '/sendLogin', data: data}, function(data){
+      sendRequest({url: '/submitLogin', data: data}, function(data){
           defaultMessageHandling(data);
       });
     });
