@@ -13,6 +13,7 @@ function loadAccDetails(){
 			$('.bedrijf').text(data['bedrijf']);
 			$('.straat').text(data['straat']);
 			$('.postcode').text(data['postcode']);
+			$('.plaats').text(data['plaats']);
 			$('.telefoon').text(data['telefoon']);
 		}
 	});

@@ -60,6 +60,7 @@ class Webshop extends BaseController
             'bedrijf' => $user->user_company_name, 
             'straat' => $user->user_delivery_adress,
             'postcode' => $user->user_zipcode,
+            'plaats' => $user->user_city,
             'telefoon' => $user->user_phone
         );
 

@@ -305,7 +305,7 @@
                             <span class="hidden-xs">Welkom </span><?= Session::get('userLoggedIn')[0]->user_company_name; ?> 
                         </a>
                         <div class="col-xs-5 col-md-6 col-left">
-                            <a href="https://www.koskamp.nl/mijn-account/berichtencentrum">Mijn berichten<span class="berichten-aantal-button btn btn-default btn-xs hidden-xs">0</span></a>
+                            <a href="/webshop/berichtencentrum">Mijn berichten<span class="berichten-aantal-button btn btn-default btn-xs hidden-xs">0</span></a>
                         </div>
                         <div class="col-xs-7 col-md-6 col-right">
                             <a href="https://www.koskamp.nl/winkelwagen">Mijn winkelwagen<div class="winkelwagen-aantal btn btn-default btn-xs">0</div></a>
@@ -499,6 +499,10 @@
         case 'Account':
             echo '<script>addClassToBody("mijn-account");</script>'
                 . '<script>loadAccDetails();</script>'; 
+            break;
+
+        case 'Berichten centrum':
+            echo '<script>addClassToBody("mijn-account berichtencentrum");</script>'; 
             break;
 
         default:

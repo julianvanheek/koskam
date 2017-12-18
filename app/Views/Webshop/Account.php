@@ -7,7 +7,7 @@
                     <span class="debiteurNummer">Laden..</span>
                     <br> <span class="bedrijf"></span>
                     <br> <span class="straat"></span>
-                    <br> <span class="postcode"></span>
+                    <br> <span class="postcode"></span> <span class="plaats"></span>
                     <br> <span class="telefoon"></span>
                 </p>
             </div>

@@ -58,7 +58,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="/">
-                        <img src="<?= theme_url('images/logo.svg'); ?>" alt="Koskam B.V." title="Koskam B.V." width="135" height="40">
+                        <img src="<?= theme_url('images/logo.png'); ?>" alt="Koskam B.V." title="Koskam B.V." width="135" height="40">
                     </a>
 
                     </div>

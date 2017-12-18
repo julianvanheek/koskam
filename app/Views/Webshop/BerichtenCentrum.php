@@ -19,7 +19,7 @@
 </ul>
 <span class="aantalnieuweberichtenmeldingbody" style="display: block; margin-bottom: 20px;">
 	<p>
-		U heeft 2 nieuwe berichten.
+		U heeft 1 nieuw(e) berichten.
 	</p>
 </span>
 <div class="panel-group">
