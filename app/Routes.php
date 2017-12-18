@@ -26,7 +26,7 @@ Route::get('/wachtwoordVergeten', 'Pages@wachtwoordVergeten');
 
 // function routes
 Route::post('/submitLogin', 'Index@login');
-Route::post('/submitRegister', 'Index@register');
+Route::post('/sendRegister', 'Index@register');
 
 /** End define static routes */
 

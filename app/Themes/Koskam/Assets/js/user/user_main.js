@@ -13,7 +13,7 @@ $('document').ready(function(){
     });
 
     // Register
-    $('#register-form').on('click', '.register-button', function(e){
+    $('#registerForm').on('click', '.submit', function(e){
       e.preventDefault();
       var data = $(this.form).serialize();
       sendRequest({url: '/sendRegister', data: data}, function(data){

@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\User;
+use App\Models\Company;
 
 use View;
 use Config;
@@ -24,9 +25,11 @@ use Hash;
 class Index extends BaseController
 {
     public $user;
+    public $company;
 
     public function __construct(){
         $this->user = new User();
+        $this->company = new Company();
     }
    
     /**
@@ -84,24 +87,24 @@ class Index extends BaseController
         $telefoonmobiel = htmlentities($_POST['telefoonmobiel']);
         $kvk = htmlentities($_POST['kvk']);
 
-        $bedrijfsnaamCheck = $this->user->getCompany($bedrijfsnaam);
-        $userCheck = $this->user->getUser($emailadres);
-        $kvkCheck = $this->user->getCompanyByKvK($kvk);
-
-        if($bedrijfsnaamCheck){
-            return $this->messageHandling('error', 'Bedrijf staat al ingeschreven!');
-        }
-        if($userCheck){
-            return $this->messageHandling('error', 'Emailadres word al gebruikt!');
-        }
-        if($kvkCheck){
-            return $this->messageHandling('error', 'KvK staat al ingeschreven!');
-        }
-        if(strlen($kvk) != 8){
+        if(strlen($kvk) != 8 || !is_numeric($kvk))
             return $this->messageHandling('error', 'KvK niet juist!');
-        }        
+        if (!filter_var($emailadres, FILTER_VALIDATE_EMAIL))
+            return $this->messageHandling('error', 'Email is niet juist!');   
 
-        $this->user->insertUser($data);
+        $bedrijfsnaamCheck = $this->company->getCompany($bedrijfsnaam);
+        $userCheck = $this->company->getCompanyMail($emailadres);
+        $kvkCheck = $this->company->getCompanyByKvK($kvk);
+
+        if($bedrijfsnaamCheck)
+            return $this->messageHandling('error', 'Bedrijf staat al ingeschreven!');
+        if($userCheck)
+            return $this->messageHandling('error', 'Emailadres word al gebruikt!');
+        if($kvkCheck)
+            return $this->messageHandling('error', 'KvK staat al ingeschreven!');
+         
+
+        // $this->company->insertCompany($data);
 
         return json_encode(array('redirect' => 'geregistreerd'));
     }

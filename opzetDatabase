@@ -1,0 +1,94 @@
+Bedrijven AS Companies {
+	BedrijfsID		=> c_id,
+	Bedrijfsnaam 	=> c_name,
+	BedrijfsKvK		=> c_kvk,
+	Naam eigenaar 	=> c_owner,
+	Afleveradres 	=> c_deliver_address,
+	Postcode		=> c_zipcode,
+	Woonplaats		=> c_city,
+	Telefoon vast	=> c_phone,
+	Telefoon mobiel => c_phone_m,
+	Email			=> c_email
+}
+
+Gebruikers AS Users {
+	GebruikerID 	=> u_id,
+	BedrijfsID 		=> c_id,
+	Voornaam		=> u_firstname,
+	Achternaam		=> u_lastname,
+	Gebruikersnaam	=> u_username,
+	Email 			=> u_email,
+	Wachtwoord   	=> u_password,
+	Rechten			=> u_user_level,
+	Geactiveerd		=> u_active
+}
+
+ Werknemers AS Employees {
+	GebruikerID 	=> e_id,
+	Voornaam		=> e_firstname,
+	Achternaam		=> e_lastname,
+	Gebruikersnaam	=> e_username,
+	Email 			=> e_email,
+	Wachtwoord   	=> e_password,
+	Geactiveerd		=> e_active
+}
+
+Autos AS Van {
+	busID			=> v_id,
+	WerknemerID		=> e_id
+}
+
+Activatie codes AS Activation_tokens {
+	TokenID 		=> t_id,
+	TokenType		=> t_type,
+	Token 			=> t_token,
+	UserID			=> u_id
+}
+
+Nieuws berichten AS News {
+	NieuwsID 		=> n_id,
+	NieuwsTitel		=> n_title,
+	NieuwsSubTitel	=> n_sub_title,
+	NieuwsBericht	=> n_message,
+	Datum			=> n_date
+}
+
+Vacatures AS Job_offers {
+	JobID			=> j_id,
+	JobTitel		=> j_title,
+	JobSubTitel		=> j_sub_title,
+	JobMessage		=> j_message,
+	JobPlaats		=> j_city,
+	Datum			=> j_date
+}
+
+Opleidingen AS Employees_training {
+	TraingID 		=> et_id,
+	Beschrijving	=> et_description,
+	Plaatsen		=> et_seats,
+	Datum			=> et_date,
+	Tijd			=> et_time
+}
+
+Producten AS Products {
+	ProductID 		=> p_id,
+	Titel 			=> p_title,
+	Beschrijving	=> p_description,
+	Prijs			=> p_price,
+	Foto			=> p_image
+}
+
+Bestellingen AS Orders {
+	OrderID			=> o_id,
+	BedrijfsID		=> c_id,
+	Producten		=> o_products {
+		p_id,
+		p_number
+	}
+}
+
+Ritten AS Routes {
+	RouteID			=> r_id,
+	Van				=> v_id,
+	OrderID			=> o_id
+}
