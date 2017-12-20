@@ -22,6 +22,12 @@ class Company extends BaseModel
 {
     protected $table = 'companies';
 
+    public function getCompanyByID($id){
+        return DB::table('companies')
+            ->where('c_id', $id)
+            ->first();
+    }
+
     public function getCompanyMail($email){
         return DB::table('companies')
             ->where('c_email', $email)

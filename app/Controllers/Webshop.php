@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\User;
+use App\Models\Company;
 
 use View;
 use Config;
@@ -27,9 +28,11 @@ class Webshop extends BaseController
     protected $layout = 'Webshop';
 
     public $user;
+    public $company;
 
     public function __construct(){
         $this->user = new User();
+        $this->company = new Company();
     }
 
     public function dashboard(){
@@ -50,18 +53,22 @@ class Webshop extends BaseController
     public function loadAccountDetails(){
         
         $user = Session::get('userLoggedIn');
-        $user = $this->user->getUser($user[0]->user_email);
-
+        $user = $this->user->getUser($user[0]->u_email);
+        $company = $this->company->getCompanyByID($user->c_id);
+        $manager = $this->user->companyManager($user->c_id);
         if(!$user)
             return $this->messageHandling('error', 'Er is een probleem opgetreden!');
 
         $data = array(
-            'debiteurNummer' => $user->user_kvk, 
-            'bedrijf' => $user->user_company_name, 
-            'straat' => $user->user_delivery_adress,
-            'postcode' => $user->user_zipcode,
-            'plaats' => $user->user_city,
-            'telefoon' => $user->user_phone
+            'debiteurNummer' => $company->c_kvk, 
+            'bedrijf' => $company->c_name, 
+            'straat' => $company->c_deliver_address,
+            'postcode' => $company->c_zipcode,
+            'plaats' => $company->c_city,
+            'telefoon' => $company->c_phone,
+            'email' => $company->c_email,
+            'm_name' => $manager->u_firstname . ' ' . $manager->u_lastname,
+            'm_email' => $manager->u_email,
         );
 
         return json_encode($data);

@@ -24,25 +24,20 @@ class User extends BaseModel
 
     public function getUser($username){
         return DB::table('Users')
-            ->where('user_email', $username)
+            ->where('u_email', $username)
             ->first();
-    }
-
-    public function getCompany($name){
-        return DB::table('Users')
-            ->where('user_company_name', $name)
-            ->first();
-    }
-
-    public function getCompanyByKvK($kvk){
-    	return DB::table('Users')
-    		->where('user_kvk', $kvk)
-    		->first();
     }
 
     public function insertUser($data){
     	return DB::table('Users')
     		->insert($data);
+    }
+
+    public function companyManager($c_id){
+        return DB::table('Users')
+            ->where('c_id', $c_id)
+            ->where('u_user_level', 2)
+            ->first();
     }
 
 

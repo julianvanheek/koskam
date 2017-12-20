@@ -50,15 +50,15 @@ class Index extends BaseController
         if(!$user)
             return $this->messageHandling('error', 'Gebruiker niet gevonden!');
         
-        if(!Hash::check($password, $user->user_password))
+        if(!Hash::check($password, $user->u_password))
             return $this->messageHandling('error', 'Incorrecte gegevens!');
         
-        if($user->user_level == 3){
+        if($user->u_user_level == 3){
             Session::push('loggedIn', $user);
             return json_encode(array('redirect' => 'admin/dashboard'));
         }
 
-        if($user->user_level < 1)
+        if($user->u_user_level < 1)
             return $this->messageHandling('error', 'Account is uitgeschakeld!');
         
         
@@ -104,10 +104,31 @@ class Index extends BaseController
             return $this->messageHandling('error', 'KvK staat al ingeschreven!');
          
 
-        // $this->company->insertCompany($data);
+        $this->company->insertCompany($data);
+        $this->user->insertUser($data);
+        $this->user->insertToken($data);
 
         return json_encode(array('redirect' => 'geregistreerd'));
     }
+
+    // public function createAcc(){
+    //     $companyId = '1';
+    //     $firstname = 'Jan';
+    //     $lastname = 'Averdijk';
+    //     $email = 'julianvanheek30@hotmail.com';
+    //     $password = 'broekhuis';
+    //     $userLevel = '2';
+    //     $active = '1';
+
+    //     $password = Hash::make($password);
+    //     $userData = array('c_id' => $companyId, 'u_firstname' => $firstname, 'u_lastname' => $lastname, 'u_email' => $email, 'u_password' => $password, 'u_user_level' => $userLevel, 'u_active' => $active);
+    //     $companyData = array('c_name' => 'Broekhuis', 'c_kvk' => '65781066', 'c_owner' => 'Jan Averdijk', 'c_deliver_address' => 'Kalanderstraat 9', 'c_zipcode' => '7461JL', 'c_city' => 'Rijssen', 'c_phone' => '0548520738', 'c_phone_m' => '0611991522', 'c_email' => 'jan.averdijk@broekhuis.nl');
+
+    //     $this->company->insertCompany($companyData);
+    //     $this->user->insertUser($userData);
+
+    //     return Redirect::intended('/');
+    // }
 
     public function logout(){
         Session::flush();

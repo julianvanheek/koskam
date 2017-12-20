@@ -83,7 +83,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="/webshop">
-                            <img src="<?= theme_url('images/logo.svg'); ?>" alt="Koskamp B.V." title="Koskam B.V." width="135" height="40">
+                            <img src="<?= theme_url('images/logo.png'); ?>" alt="Koskamp B.V." title="Koskam B.V." width="135" height="40">
                         </a>
 
                     </div>
@@ -301,8 +301,8 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="berichtencentrum">
-                        <a href="/webshop/account" class="welkom" title="Welkom <?= Session::get('userLoggedIn')[0]->user_company_name; ?>">
-                            <span class="hidden-xs">Welkom </span><?= Session::get('userLoggedIn')[0]->user_company_name; ?> 
+                        <a href="/webshop/account" class="welkom" title="Welkom <?= Session::get('userLoggedIn')[0]->u_firstname; ?>">
+                            <span class="hidden-xs">Welkom </span><?= Session::get('userLoggedIn')[0]->u_firstname . ' ' . Session::get('userLoggedIn')[0]->u_lastname; ?> 
                         </a>
                         <div class="col-xs-5 col-md-6 col-left">
                             <a href="/webshop/berichtencentrum">Mijn berichten<span class="berichten-aantal-button btn btn-default btn-xs hidden-xs">0</span></a>

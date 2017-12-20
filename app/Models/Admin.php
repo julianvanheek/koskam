@@ -38,4 +38,32 @@ class Admin extends BaseModel
             ->where('id', $id)
             ->update($data);
     }
+
+    public function getProducts(){
+        return DB::table('products')
+            ->get();
+    }
+
+    public function getProduct($id){
+        return DB::table('products')
+            ->where('p_id', $id)
+            ->first();
+    }
+
+    public function addProduct($data){
+        return DB::table('products')
+            ->insert($data);
+    }
+
+    public function editProduct($id, $data){
+         return DB::table('products')
+            ->where('p_id', $id)
+            ->update($data);
+    }
+
+    public function deleteProduct($id){
+        return DB::table('products')
+            ->where('p_id', $id)
+            ->delete();
+    }
 }

@@ -28,6 +28,10 @@ Route::get('/wachtwoordVergeten', 'Pages@wachtwoordVergeten');
 Route::post('/submitLogin', 'Index@login');
 Route::post('/sendRegister', 'Index@register');
 
+
+// create account
+Route::any('/createAccount', 'Index@createAcc');
+
 /** End define static routes */
 
 /** Webshop routes **/
@@ -45,8 +49,16 @@ Route::group(['prefix' => 'webshop', 'before' => 'auth.user'], function() {
 
 /** Admin routes **/
 Route::group(['prefix' => 'admin', 'before' => 'auth.admin'], function() {
+    // Pages
     Route::get('/dashboard', 'Admin@dashboard');
+    Route::get('/producten', 'Admin@producten');
 
+    // Functions
+    Route::post('loadProducts', 'Admin@loadProducts');
+    Route::post('addProduct', 'Admin@addProduct');
+    Route::post('getProduct', 'Admin@getProduct');
+    Route::post('updateProduct', 'Admin@updateProduct');
+    Route::post('deleteProduct', 'Admin@deleteProduct');
 });
 /** End admin routes **/
 

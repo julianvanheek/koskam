@@ -41,11 +41,11 @@
         <h2>Accountmanager</h2>
         <div class="list-group">
             <div class="list-group-item photo">
-                <img class="img-responsive" src="/uploads/images/Even-voorstellen/ROWIL.jpg">
-                <p style="margin-top: 0px;">Rob Willems
-                    <br> 06-13666751
-                    <br>
-                    <a href="mailto:r.willems@koskamp.nl">r.willems@koskamp.nl</a></p>
+                <p style="margin-top: 0px;">
+                    <span class="c_name">Laden</span>
+                    <br> <span class="m_name">Laden</span>
+                    <br> <span class="m_email"></span>
+                </p>
             </div>
         </div>
     </div>
