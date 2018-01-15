@@ -40,5 +40,32 @@ class User extends BaseModel
             ->first();
     }
 
+    public function updateInfo($table, $where, $info, $update){
+        return DB::table($table)
+            ->where($where, $info)
+            ->update($update);
+    }
+
+    public function getProductByID($id){
+        return DB::table('products')
+            ->where('p_id', $id)
+            ->get();
+    }
+
+    public function getProducts($name){
+        return DB::select("
+            SELECT * 
+            FROM products 
+            WHERE p_id LIKE '%".$name."%' 
+            OR p_brand LIKE '%".$name."%'
+            OR p_type LIKE '%".$name."%'
+            OR p_title LIKE '%".$name."%'"
+        );
+    }
+
+    public function placeOrder($c_id, $products){
+        return DB::table('orders')
+            ->insert(array('c_id' => $c_id, 'o_products' => $products));
+    }
 
 }

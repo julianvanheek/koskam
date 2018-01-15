@@ -24,8 +24,7 @@ use Hash;
  */
 class Index extends BaseController
 {
-    public $user;
-    public $company;
+    public $user, $company;
 
     public function __construct(){
         $this->user = new User();

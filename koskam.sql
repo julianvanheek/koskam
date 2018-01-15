@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 20 dec 2017 om 15:58
--- Serverversie: 10.1.26-MariaDB
--- PHP-versie: 7.1.9
+-- Gegenereerd op: 15 jan 2018 om 16:45
+-- Serverversie: 10.1.21-MariaDB
+-- PHP-versie: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -32,6 +30,7 @@ CREATE TABLE `companies` (
   `c_id` int(11) NOT NULL,
   `c_name` varchar(255) NOT NULL,
   `c_kvk` int(8) NOT NULL,
+  `c_iban` varchar(30) NOT NULL,
   `c_owner` varchar(255) NOT NULL,
   `c_deliver_address` varchar(255) NOT NULL,
   `c_zipcode` varchar(7) NOT NULL,
@@ -45,8 +44,9 @@ CREATE TABLE `companies` (
 -- Gegevens worden geëxporteerd voor tabel `companies`
 --
 
-INSERT INTO `companies` (`c_id`, `c_name`, `c_kvk`, `c_owner`, `c_deliver_address`, `c_zipcode`, `c_city`, `c_phone`, `c_phone_m`, `c_email`) VALUES
-(1, 'Broekhuis Rijssen', 65781066, 'Jan Averdijk', 'Kalanderstraat 9', '7461JL', 'Rijssen', '0548520738', '0611991522', 'jan.averdijk@broekhuis.nl');
+INSERT INTO `companies` (`c_id`, `c_name`, `c_kvk`, `c_iban`, `c_owner`, `c_deliver_address`, `c_zipcode`, `c_city`, `c_phone`, `c_phone_m`, `c_email`) VALUES
+(1, 'Koskam', 65781066, 'NL18RABO0117316074', 'Laurens Pluimers', 'Kalanderstraat 9', '7461JL', 'Rijssen', '0548520738', '0611991522', 'info@koskam.nl'),
+(2, 'Koskam', 65781067, 'NL18RABO0117316073', 'Koskam', 'Kalanderstraat 9', '7461JL', 'Rijssen', '0548520738', '0611991522', 'info@koskam.nl');
 
 -- --------------------------------------------------------
 
@@ -116,8 +116,16 @@ CREATE TABLE `news` (
 CREATE TABLE `orders` (
   `o_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
-  `o_products` longtext NOT NULL
+  `o_products` longtext NOT NULL,
+  `o_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `orders`
+--
+
+INSERT INTO `orders` (`o_id`, `c_id`, `o_products`, `o_time`) VALUES
+(8, 1, 'a:1:{i:0;a:1:{i:0;s:2:\"13\";}}', '2018-01-15 15:40:23');
 
 -- --------------------------------------------------------
 
@@ -127,6 +135,8 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `products` (
   `p_id` int(11) NOT NULL,
+  `p_brand` varchar(255) NOT NULL,
+  `p_type` varchar(255) NOT NULL,
   `p_title` varchar(255) NOT NULL,
   `p_description` longtext NOT NULL,
   `p_price` int(11) NOT NULL DEFAULT '0'
@@ -136,10 +146,17 @@ CREATE TABLE `products` (
 -- Gegevens worden geëxporteerd voor tabel `products`
 --
 
-INSERT INTO `products` (`p_id`, `p_title`, `p_description`, `p_price`) VALUES
-(1, 'Mattenset', 'Mattenset 2008', 150),
-(2, 'Mattenset', 'Mattenset 3008', 200),
-(11, 'Mattenset', '108', 50);
+INSERT INTO `products` (`p_id`, `p_brand`, `p_type`, `p_title`, `p_description`, `p_price`) VALUES
+(12, 'Peugeot', '2008', 'Mattenset', '4 delig mattenset', 165),
+(13, 'Peugeot', '208', 'Mattenset', '4 delig mattenset', 165),
+(14, 'Peugeot', '3008', 'Mattenset', '4 delig mattenset', 165),
+(15, 'Peugeot', '108', 'Mattenset', '4 delig mattenset', 165),
+(16, 'Peugeot', '308, 308 GTI', 'Mattenset', '4 delig mattenset', 165),
+(17, 'Peugeot', '5008', 'Mattenset', '4 delig mattenset', 165),
+(18, 'Peugeot', 'Partner', 'Mattenset', '2 delig mattenset', 100),
+(19, 'Peugeot', 'Expert', 'Mattenset', '2 delig mattenset', 100),
+(20, 'Peugeot', 'Traveller', 'Mattenset', '8 delig mattenset', 400),
+(21, 'Peugeot', '508, 508 SW, 508 RXH', 'Mattenset', '4 delig mattenset', 250);
 
 -- --------------------------------------------------------
 
@@ -188,7 +205,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `c_id`, `u_firstname`, `u_lastname`, `u_email`, `u_password`, `u_user_level`, `u_active`) VALUES
-(1, 1, 'Jan', 'Averdijk', 'julianvanheek30@hotmail.com', '$2y$10$rgOZDUv5ab2UIJlgt4jMzeK7UCXP89G5lPctfj5Zc.pNi7lq2WGfi', '3', '1');
+(1, 1, 'Julian', 'van Heek', 'julianvanheek30@hotmail.com', '$2y$10$rgOZDUv5ab2UIJlgt4jMzeK7UCXP89G5lPctfj5Zc.pNi7lq2WGfi', '2', '1'),
+(8, 1, 'Laurens', 'Pluimers', 'laurenspluimers@hotmail.com', '', '1', '0');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -262,63 +280,52 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT voor een tabel `employees`
 --
 ALTER TABLE `employees`
   MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT voor een tabel `employees_training`
 --
 ALTER TABLE `employees_training`
   MODIFY `et_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT voor een tabel `job_offers`
 --
 ALTER TABLE `job_offers`
   MODIFY `j_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT voor een tabel `news`
 --
 ALTER TABLE `news`
   MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT voor een tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT voor een tabel `routes`
 --
 ALTER TABLE `routes`
   MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT voor een tabel `tokens`
 --
 ALTER TABLE `tokens`
   MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

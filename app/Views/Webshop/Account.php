@@ -16,13 +16,11 @@
     <div class="col-md-3">
         <h2>Mijn instellingen</h2>
         <div class="list-group">
-            <a class="list-group-item list-group-item-action" href="mijn-account/bandenprijzen">Bandenprijzen</a>
-            <a class="list-group-item list-group-item-action" href="mijn-account/berichtencentrum">Berichtencentrum</a>
-            <a class="list-group-item list-group-item-action" href="https://www.koskamp.nl/index.php?mact=kosMijnAccount,cntnt01,emailinstellingen,0&amp;cntnt01returnid=47">Emailinstellingen</a>
-            <a class="list-group-item list-group-item-action" href="https://www.koskamp.nl/index.php?mact=kosMijnAccount,cntnt01,gebruikers,0&amp;cntnt01returnid=47">Gebruikers</a>
-            <a class="list-group-item list-group-item-action" href="https://www.koskamp.nl/index.php?mact=kosMijnAccount,cntnt01,mijn-gegevens,0&amp;cntnt01returnid=47">Gegevens bijwerken</a>
-            <a class="list-group-item list-group-item-action" href="/route-overzicht">Routetijden</a>
-
+            <a class="list-group-item list-group-item-action" href="bandenprijzen">Bandenprijzen</a>
+            <a class="list-group-item list-group-item-action" href="berichtencentrum">Berichtencentrum</a>
+            <a class="list-group-item list-group-item-action" href="gebruikers">Gebruikers</a>
+            <a class="list-group-item list-group-item-action" href="gegevens-bijwerken">Gegevens bijwerken</a>
+            <a class="list-group-item list-group-item-action" href="route-overzicht">Routetijden</a>
         </div>
     </div>
     <div class="col-md-3">

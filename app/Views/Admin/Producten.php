@@ -21,6 +21,14 @@
               <form id="formCreateProduct" method="post">
                 <!-- text input -->
                 <div class="form-group">
+                  <label>Merk</label>
+                  <input class="form-control" class="merk" name="brand" placeholder="Merk" type="text">
+                </div>
+                <div class="form-group">
+                  <label>Type</label>
+                  <input class="form-control" class="type" name="type" placeholder="Type" type="text">
+                </div>
+                <div class="form-group">
                   <label>Titel</label>
                   <input class="form-control" class="title" name="titel" placeholder="Titel" type="text">
                 </div>
@@ -61,10 +69,18 @@
             <!-- /.box-header -->
             <div class="box-body">
               <form id="formEditProduct" method="post">
+                <input class="hidden-id" name="id" hidden="">
                 <!-- text input -->
                 <div class="form-group">
+                  <label>Merk</label>
+                  <input class="form-control merk" name="brand" placeholder="Merk" type="text">
+                </div>
+                <div class="form-group">
+                  <label>Type</label>
+                  <input class="form-control type" name="type" placeholder="Type" type="text">
+                </div>
+                <div class="form-group">
                   <label>Titel</label>
-                  <input class="hidden-id" name="id" disabled="" hidden="">
                   <input class="form-control title" name="titel" placeholder="Titel" type="text">
                 </div>
                 <div class="form-group">

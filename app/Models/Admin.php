@@ -22,15 +22,47 @@ class Admin extends BaseModel
 {
     protected $table = 'users';
 
+    // global functions
+
+    public function countInfo($table){
+        return DB::table($table)
+            ->count();
+    }
+
+    public function insertData($table, $data){
+        return DB::table($table)
+            ->insert($data);
+    }
+
+    public function getData($table){
+        return DB::table($table)
+            ->get();
+    }
+
+    public function getDataID($table, $where, $id){
+        return DB::table($table)
+            ->where($where, $id)
+            ->get();
+    }
+
+    public function updateData($table, $where, $id, $update){
+        return DB::table($table)
+            ->where($where, $id)
+            ->update($update);
+    }
+
+    public function deleteData($table, $table_prefix, $id){
+        return DB::table($table)
+            ->where($table_prefix.'id', $id)
+            ->delete();
+    }
+
+    // specific functions
+
     public function getUser($username){
         return DB::table('users')
             ->where('username', $username)
             ->first();    
-    }
-
-    public function insertUser($data){
-        return DB::table('users')
-            ->insert($data);
     }
 
     public function updateUser($id, $data){
@@ -39,20 +71,11 @@ class Admin extends BaseModel
             ->update($data);
     }
 
-    public function getProducts(){
-        return DB::table('products')
-            ->get();
-    }
-
+    
     public function getProduct($id){
         return DB::table('products')
             ->where('p_id', $id)
             ->first();
-    }
-
-    public function addProduct($data){
-        return DB::table('products')
-            ->insert($data);
     }
 
     public function editProduct($id, $data){

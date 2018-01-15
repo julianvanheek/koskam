@@ -5,3 +5,4 @@ if(debug){
 
 var siteUrl = 'http://koskam.dev';
 
+var pathArray = window.location.pathname.split( '/' );

@@ -14,6 +14,8 @@ use Nova\Http\Request;
 
 /** Define static routes. */
 
+Route::pattern('product', '(\w+)');
+
 Route::get('logout', 'Admin@logout');
 
 //pages
@@ -39,11 +41,28 @@ Route::group(['before' => 'auth.user'], function() {
     Route::get('/webshop', 'Webshop@dashboard');
     Route::post('/loadAccountDetails', 'Webshop@loadAccountDetails');
     // Route::post('/loadAccountMessages', 'Webshop@loadAccountMessages');
+    Route::post('/loadCompanyDetails', 'Webshop@loadCompanyDetails');
+    Route::post('/submitUserDetails', 'Webshop@submitUserDetails');
+
+    // products
+    Route::post('/submitSearch', 'Webshop@submitSearch');
+    Route::post('/loadProducts', 'Webshop@loadProducts');
+
+    // winkelwagen
+    Route::post('/addProductToCart', 'Webshop@addProductToCart');
+    Route::post('/deleteProduct', 'Webshop@removeProductFromCart');
+    Route::post('/countCartItems', 'Webshop@countCartItems');
+    Route::post('/loadCart', 'Webshop@loadCart');
+    Route::post('/orderCart', 'Webshop@orderCart');
 });
 
 Route::group(['prefix' => 'webshop', 'before' => 'auth.user'], function() {
     Route::get('/account', 'Webshop@account');
     Route::get('/berichtencentrum', 'Webshop@berichtenCentrum');
+    Route::get('/gegevens-bijwerken', 'Webshop@gegevensBijwerken');
+    Route::get('/producten', 'Webshop@products');
+    Route::get('/producten/{product}', 'Webshop@products');
+    Route::get('/winkelwagen', 'Webshop@winkelwagen');
 });
 /** End webshop routes **/
 
@@ -52,13 +71,33 @@ Route::group(['prefix' => 'admin', 'before' => 'auth.admin'], function() {
     // Pages
     Route::get('/dashboard', 'Admin@dashboard');
     Route::get('/producten', 'Admin@producten');
+    Route::get('/bedrijven', 'Admin@bedrijven');
+    Route::get('/gebruikers', 'Admin@gebruikers');
 
     // Functions
-    Route::post('loadProducts', 'Admin@loadProducts');
-    Route::post('addProduct', 'Admin@addProduct');
-    Route::post('getProduct', 'Admin@getProduct');
-    Route::post('updateProduct', 'Admin@updateProduct');
-    Route::post('deleteProduct', 'Admin@deleteProduct');
+
+        //Dashboard
+        Route::post('loadDashboard', 'Admin@loadDashboard');
+
+        //Products
+        Route::post('loadProducts', 'Admin@loadProducts');
+        Route::post('addProduct', 'Admin@addProduct');
+        Route::post('getProduct', 'Admin@getProduct');
+        Route::post('updateProduct', 'Admin@updateProduct');
+        Route::post('deleteProduct', 'Admin@deleteProduct');
+
+        //Companies
+        Route::post('loadCompanies', 'Admin@loadCompanies');
+        Route::post('addCompany', 'Admin@addCompany');
+        Route::post('getCompany', 'Admin@getCompany');
+        Route::post('updateCompany', 'Admin@updateCompany');
+        Route::post('deleteCompany', 'Admin@deleteCompany');
+        Route::post('companyCreateUser', 'Admin@companyCreateUser');
+        Route::post('getCompanyUsers', 'Admin@getCompanyUsers');
+
+        //Accounts
+        Route::post('loadAccounts', 'Admin@loadAccounts');
+        
 });
 /** End admin routes **/
 

@@ -21,33 +21,50 @@ $('document').ready(function(){
       });
     });
 
-    // Change password
-    $('#changePassword').on('click', '.postPassword', function(e){
+    $('#formGegevensBewerken').on('click', '.submit', function(e){
       e.preventDefault();
       var data = $(this.form).serialize();
-      sendRequest({url: '/sendPassword', data: data}, function(data){
-          defaultMessageHandling(data);
+      sendRequest({url: '/submitUserDetails', data: data}, function(data){
+        defaultMessageHandling(data);
+        loadCompanyDetails();
       });
     });
 
-    // Change account
-    $('#userDetails').on('click', '.postAccount', function(e){
+    $('#frmSearchAlgemeen').on('click', '.submit', function(e){
       e.preventDefault();
       var data = $(this.form).serialize();
-      sendRequest({url: '/sendAccount', data: data}, function(data){
+      sendRequest({url: '/submitSearch', data: data}, function(data){
         defaultMessageHandling(data);
-        loadUserDetails();
       });
     });
-    
-    var lastScrollTop = 0;
-    $(window).scroll(function(event){
-       var st = $(this).scrollTop();
-       if (st > lastScrollTop){
-           $('.menu').fadeOut(100);
-       } else {
-          $('.menu').fadeIn(100);
-       }
-       lastScrollTop = st;
+
+    $('#products').on('click', '.addProduct', function(e){
+      e.preventDefault();
+      var data = {};
+      data['id'] = $(this).attr('data-id');
+      sendRequest({url: '/addProductToCart', data: data}, function(data){
+        defaultMessageHandling(data);
+        countCartItems();
+      });
+    });
+
+    $('#winkelwagen').on('click', '.deleteProduct', function(e){
+      e.preventDefault();
+      var data = {};
+      data['id'] = $(this).attr('data-id');
+      sendRequest({url: '/deleteProduct', data: data}, function(data){
+        defaultMessageHandling(data);
+        countCartItems();
+        loadCart();
+      });
+    });
+
+    $('#winkelwagen').on('click', '.bestelWagen', function(e){
+      e.preventDefault();
+      sendRequest({url: '/orderCart'}, function(data){
+        defaultMessageHandling(data);
+        countCartItems();
+        loadCart();
+      });
     });
 });

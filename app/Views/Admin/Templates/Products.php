@@ -1,18 +1,22 @@
 <thead>
   <tr>
     <th>ID</th>
-    <th>Naam</th>
+    <th>Merk</th>
+    <th>Type</th>
+    <th>Titel</th>
     <th>Beschrijving</th>
     <th>Prijs</th>
     <th>Bewerken</th>
   </tr>
 </thead>
 <tbody>
-	<?php
+	<?php 
 	foreach ($records as $product) {
 		echo '
 		<tr>
 			<td>'. $product->p_id .'</td>
+			<td>'. $product->p_brand .'</td>
+			<td>'. $product->p_type .'</td>
 			<td>'. $product->p_title .'</td>
 			<td>'. $product->p_description .'</td>
 			<td>€'. $product->p_price .',-</td>

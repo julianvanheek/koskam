@@ -22,6 +22,12 @@ class Company extends BaseModel
 {
     protected $table = 'companies';
 
+     public function getInfo($table, $where, $info){
+        return DB::table($table)
+            ->where($where, $info)
+            ->first();
+    }
+
     public function getCompanyByID($id){
         return DB::table('companies')
             ->where('c_id', $id)
@@ -49,6 +55,12 @@ class Company extends BaseModel
     public function insertCompany($data){
     	return DB::table('companies')
     		->insert($data);
+    }
+
+    public function updateCompany($kvk, $data){
+        return DB::table('companies')
+            ->where('c_kvk', $kvk)
+            ->update($data);
     }
 
 

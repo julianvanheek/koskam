@@ -4,8 +4,8 @@
         <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Berichtencentrum</span>
-          <span class="info-box-number">1500</span>
+          <span class="info-box-text">Producten</span>
+          <span class="info-box-number producten">Laden..</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -44,7 +44,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Klanten</span>
-          <span class="info-box-number">93,139</span>
+          <span class="info-box-number bedrijven">Laden..</span>
         </div>
         <!-- /.info-box-content -->
       </div>

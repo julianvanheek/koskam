@@ -29,18 +29,20 @@
         theme_url('css/plugins/alertify/alertify_theme.css', 'Koskam'),
         theme_url('css/plugins/fileinput/fileinput.css', 'Koskam'),
         '//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css',
+        'https://cdn.datatables.net/v/bs/dt-1.10.16/fh-3.1.3/datatables.min.css',
       ]);
 
       Assets::js([
         theme_url('js/config.js', 'Koskam'),
         theme_url('js/main.js', 'Koskam'),
         theme_url('js/functions.js', 'Koskam'),
+        'https://cdn.datatables.net/v/bs/dt-1.10.16/fh-3.1.3/datatables.min.js',
         theme_url('js/admin/admin_main.js', 'Koskam'),
         theme_url('js/admin/admin_functions.js', 'Koskam'),
         theme_url('js/plugins/alertify/alertify.js', 'Koskam'),
         theme_url('js/plugins/fileinput/fileinput.js', 'Koskam'),
-        'https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js',
       ]);
+
     ?>
 
 	</head>
@@ -86,8 +88,8 @@
     
         <?php if($title == 'Dashboard'){echo '<li class="active">';}else{echo '<li>';} ?><a href="dashboard"><i class="fa fa-globe"></i> <span>Dashboard</span></a></li>
         <?php if($title == 'Producten'){echo '<li class="active">';}else{echo '<li>';} ?><a href="producten"><i class="fa fa-globe"></i> <span>Producten</span></a></li>
-        <?php if($title == 'Bedrijven'){echo '<li class="active">';}else{echo '<li>';} ?><a href="#"><i class="fa fa-globe"></i> <span>Bedrijven</span></a></li>
-        <?php if($title == 'Accounts'){echo '<li class="active">';}else{echo '<li>';} ?><a href="#"><i class="fa fa-globe"></i> <span>Accounts</span></a></li>
+        <?php if($title == 'Bedrijven'){echo '<li class="active">';}else{echo '<li>';} ?><a href="bedrijven"><i class="fa fa-globe"></i> <span>Bedrijven</span></a></li>
+        <?php if($title == 'Gebruikers'){echo '<li class="active">';}else{echo '<li>';} ?><a href="gebruikers"><i class="fa fa-globe"></i> <span>Accounts</span></a></li>
         <?php if($title == 'Bestellingen'){echo '<li class="active">';}else{echo '<li>';} ?><a href="#"><i class="fa fa-globe"></i> <span>Bestellingen</span></a></li>
         <?php if($title == 'Routes'){echo '<li class="active">';}else{echo '<li>';} ?><a href="#"><i class="fa fa-globe"></i> <span>Routes</span></a></li>
         <?php if($title == 'Werknemers'){echo '<li class="active">';}else{echo '<li>';} ?><a href="#"><i class="fa fa-globe"></i> <span>Werknemers</span></a></li>
@@ -130,11 +132,25 @@
 <?php
 
   switch ($title) {
+    case 'Dashboard':
+      echo '<script>loadDashboard();</script>';
+      break;
+
     case 'Producten':
       echo '<script>loadProducts();</script>';
       break;
-    
+
+    case 'Bedrijven':
+      echo '<script>loadCompanies();</script>';
+      break;
+
+    case 'Gebruikers':
+      echo '<script>loadAccounts();</script>';
+      break;
+
     default:
       # code...
       break;
   }
+
+?>
